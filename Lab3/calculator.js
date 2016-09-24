@@ -88,7 +88,7 @@ Calculator.prototype.tan = function(number) {
     }
     else
     {
-        throw new Error("Error: " + number + " is not a number");
+        throw new Error(number + " is not a number");
     }
 };
 
