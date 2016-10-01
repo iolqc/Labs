@@ -35,7 +35,7 @@ html {
 /* Inset shadow on the screen to create indent */
 .screen {
     height: 36px;
-    width: 212px;
+    width: 285px;
 
     float: right;
 
@@ -44,8 +44,8 @@ html {
     background: white;
     font-size: 17px;
     line-height: 40px;
-    color: white;
-
+    color: black;
+    font-weight: 800;
     text-align: right;
     letter-spacing: 1px;
 }
@@ -81,19 +81,10 @@ html {
     margin-right: 0;
 }
 
-.top span.clear {
-    background: black;
-    color: white;
-}
-/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
-.keys span:active {
-    top: 4px;
+.top{
+    margin-bottom: 10px;
 }
 
-.keys span.eval:active {
-    top: 4px;
-}
-
-.top span.clear:active {
-    top: 4px;
+span.clear {
+    background: red;
 }

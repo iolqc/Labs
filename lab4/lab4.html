@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="lab4.css">
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://www.geoplugin.net/javascript.gp" ></script>
-    <!--script type="text/javascript" src="calculator.js"></script-->
+    <script type="text/javascript" src="calculator.js"></script>
     <script type="text/javascript" src="controller.js"></script>
 </head>
 <body>
@@ -17,29 +17,33 @@
     <div id="calculator">
         <!-- Screen and clear key -->
         <div class="top">
-            <span class="clear">C</span>
             <div class="screen"></div>
         </div>
-
         <div class="keys">
-            <!-- operators and other keys -->
-            <span id="sept">7</span>
-            <span>8</span>
-            <span>9</span>
-            <span class="operator">+</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span class="operator">-</span>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span class="operator">÷</span>
-            <span>0</span>
-            <span>.</span>
-            <span class="eval">=</span>
-            <span class="operator">x</span>
-            <span>Pos</span>
+            <span id="7">7</span>
+            <span id="8">8</span>
+            <span id="9">9</span>
+            <span id="plus" class="operator">+</span>
+            <span id="4">4</span>
+            <span id="5">5</span>
+            <span id="6">6</span>
+            <span id="less" class="operator">-</span>
+            <span id="1">1</span>
+            <span id="2">2</span>
+            <span id="3">3</span>
+            <span id="divide" class="operator">÷</span>
+            <span id="0">0</span>
+            <span id="dot">.</span>
+            <span id="multiply">x</span>
+            <span id="equal" class="operator">=</span>
+            <span id="c" class="clear">C</span>
+            <span id="pos">Pos</span>
+            <span id="factoriel">n!</span>
+            <span id="setMem" class="operator">set Mem</span>
+            <span id="sin">sin</span>
+            <span id="cos">cos</span>
+            <span id="tan">tan</span>
+            <span id="getMem" class="operator">get Mem</span>
         </div>
     </div>
     <div id="coordo"></div>

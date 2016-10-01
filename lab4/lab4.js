@@ -1,5 +1,6 @@
 /**
  * Created by iOL on 2016-09-28.
+ * NON UTILISÉ JS ORIGINAL
  */
 // Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');

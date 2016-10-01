@@ -11,13 +11,7 @@ Math.factorial = function(n) {
     return f[n] = Math.factorial(n-1) * n;
 }
 
-// Classe Calculator
-// Toutes les méthodes sauf `equals` retournent `this`, ce qui permet de chainer les appels
-// Ex: 
-// var calculator = new Calculator()
-// calculator.add(2).add(3).subtract(2).equals()
-// Retourne : 2 
-// 2 + 3 - 2 = 2
+
 var Calculator = function () {
     var memory;
 
@@ -114,3 +108,11 @@ var Calculator = function () {
         return equationSolution;
     }
 }
+
+// Classe Calculator
+// Toutes les méthodes sauf `equals` retournent `this`, ce qui permet de chainer les appels
+// Ex:
+//var test = new Calculator()
+//console.log(test.add(2).add(3).subtract(2).equals().toString())
+// Retourne : 3
+// 2 + 3 - 2 = 3
