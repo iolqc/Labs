@@ -26,6 +26,18 @@ var Calculator = function () {
         return this;
     }
 
+    this.getEquation = function() {
+        return equation;
+    }
+/*
+    this.setEquation = function(value) {
+        equation = value;
+    }*/
+
+    this.concatEquation = function(value) {
+        equation += value;
+    }
+
     // Réinitialiser l'équation 
     this.clear = function() {
         equation = '';
@@ -77,7 +89,7 @@ var Calculator = function () {
         return this;
     }
 
-    this.tan = function() {
+    this.tan = function(value) {
         equation += 'Math.tan(' + parseFloat(value) + ')'
         return this;
     }
@@ -102,7 +114,7 @@ var Calculator = function () {
     this.equals = function () {
         // Il faut être très prudent avec eval !!! Eval pourrait permettre d'injecter du code malicieux et l'exécuter
         // C'est pourquoi toutes nos variables 'value' sont passées dans 'parseFloat'
-        console.log('Evaluating :', equation);
+        //console.log('Evaluating :', equation);
         var equationSolution = eval(equation);
         equation = '';
         return equationSolution;
@@ -113,6 +125,21 @@ var Calculator = function () {
 // Toutes les méthodes sauf `equals` retournent `this`, ce qui permet de chainer les appels
 // Ex:
 //var test = new Calculator()
-//console.log(test.add(2).add(3).subtract(2).equals().toString())
+//console.log(test.tan(3).equals());
+
+//test.value(1);
+//var test1 = test.getEquation();
+//test.clear();
+//console.log(test.cos(test1).equals());
+//console.log(eval("Math.cos(1)"));
+
+/*
+var calculator = new Calculator()
+calculator.value(1)
+var temp = calculator.getEquation()
+calculator.clear()
+console.log(calculator.cos(Number(temp)).equals());
+*/
+
 // Retourne : 3
 // 2 + 3 - 2 = 3

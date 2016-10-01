@@ -7,104 +7,114 @@ $(document).ready(function($) {
 
     $("#7").click(
         function () {
-            /*c'est pas ça!*/
-            display(calculator.value(7).toString());
+            calculator.value(7);
+            display(calculator.getEquation());
         }
     );
 
     $("#8").click(
         function () {
-            alert("8");
+            calculator.value(8);
+            display(calculator.getEquation());
         }
     );
 
     $("#9").click(
         function () {
-            alert("9");
+            calculator.value(9);
+            display(calculator.getEquation());
         }
     );
 
     $("#plus").click(
         function () {
-            alert("+");
+            calculator.add()
         }
     );
 
     $("#4").click(
         function () {
-            alert("4");
+            calculator.value(4);
+            display(calculator.getEquation());
         }
     );
 
     $("#5").click(
         function () {
-            alert(5);
+            calculator.value(5);
+            display(calculator.getEquation());
         }
     );
 
     $("#6").click(
         function () {
-            alert("6");
+            calculator.value(6);
+            display(calculator.getEquation());
         }
     );
 
     $("#less").click(
         function () {
-            alert("-");
+            calculator.subtract();
         }
     );
 
     $("#1").click(
         function () {
-            alert("1");
+            calculator.value(1);
+            display(calculator.getEquation());
         }
     );
 
     $("#2").click(
         function () {
-            alert("2");
+            calculator.value(2);
+            display(calculator.getEquation());
         }
     );
 
     $("#3").click(
         function () {
-            alert("3");
+            calculator.value(3);
+            display(calculator.getEquation());
         }
     );
 
     $("#divide").click(
         function () {
-            alert("÷");
+            calculator.divide();
         }
     );
 
     $("#0").click(
         function () {
-            alert("0");
+            calculator.value(0);
+            display(calculator.getEquation());
         }
     );
 
     $("#dot").click(
         function () {
-            alert(".");
+            calculator.concatEquation(".");
         }
     );
 
     $("#multiply").click(
         function () {
-            alert("x");
+            calculator.multiply();
         }
     );
 
     $("#equal").click(
         function () {
-            alert("=");
+            display(calculator.equals());
         }
     );
 
     $("#c").click(
         function () {
-            alert("clear");
+            calculator.clear()
+            display(calculator.getEquation());
         }
     );
 
@@ -116,37 +126,40 @@ $(document).ready(function($) {
 
     $("#factoriel").click(
         function () {
-            alert("n!");
+            calculator.factorial();
         }
     );
 
     $("#setMem").click(
         function () {
-            alert("setMem");
+            calculator.setMemory();
         }
     );
 
     $("#sin").click(
         function () {
-            alert("sin");
+          calculator.sin(calculator.getEquation());
         }
     );
 
     $("#cos").click(
         function () {
-            alert("cos");
+            var temp = calculator.getEquation()
+            calculator.clear();
+            calculator.cos(temp);
+            display(calculator.getEquation());
         }
     );
 
     $("#tan").click(
         function () {
-            alert("tan");
+            calculator.tan(calculator.getEquation());
         }
     );
 
     $("#getMem").click(
         function () {
-            alert("getMem");
+            calculator.getMemory()
         }
     );
 
