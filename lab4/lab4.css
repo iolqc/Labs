@@ -1,4 +1,3 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ html {
     background-size: cover;
 }
 
-/* Using box shadows to create 3D effects */
 #calculator {
     width: 325px;
     height: auto;
@@ -27,12 +25,10 @@ html {
     background: lightgray;
 }
 
-/* Top portion */
 .top span.clear {
     float: left;
 }
 
-/* Inset shadow on the screen to create indent */
 .screen {
     height: 36px;
     width: 285px;
@@ -50,10 +46,8 @@ html {
     letter-spacing: 1px;
 }
 
-/* Clear floats */
 .keys, .top {overflow: hidden;}
 
-/* Applying same to the keys */
 .keys span, .top span.clear {
     float: left;
     top: 0;
@@ -71,12 +65,10 @@ html {
     line-height: 36px;
     text-align: center;
 
-    /* prevent selection of text inside keys */
     user-select: none;
 }
 
-/* Remove right margins from operator keys */
-/* style different type of keys (operators/evaluate/clear) differently */
+
 .keys span.operator {
     margin-right: 0;
 }
@@ -87,4 +79,8 @@ html {
 
 span.clear {
     background: red;
+}
+
+#equal {
+    background-color: yellow;
 }

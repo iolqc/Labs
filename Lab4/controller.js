@@ -3,7 +3,12 @@
  */
 $(document).ready(function($) {
 
-    var calculator = new Calculator()
+    var calculator = new Calculator();
+    calculator.value(0);
+    display(0);
+    var screen = $('.screen');
+
+    var memoryNumber = 'no data was set';
 
     $("#7").click(
         function () {
@@ -28,7 +33,8 @@ $(document).ready(function($) {
 
     $("#plus").click(
         function () {
-            calculator.add()
+            calculator.add();
+            display(calculator.getEquation());
         }
     );
 
@@ -56,6 +62,7 @@ $(document).ready(function($) {
     $("#less").click(
         function () {
             calculator.subtract();
+            display(calculator.getEquation());
         }
     );
 
@@ -83,6 +90,7 @@ $(document).ready(function($) {
     $("#divide").click(
         function () {
             calculator.divide();
+            display(calculator.getEquation());
         }
     );
 
@@ -96,12 +104,14 @@ $(document).ready(function($) {
     $("#dot").click(
         function () {
             calculator.concatEquation(".");
+            display(calculator.getEquation());
         }
     );
 
     $("#multiply").click(
         function () {
             calculator.multiply();
+            display(calculator.getEquation());
         }
     );
 
@@ -113,38 +123,50 @@ $(document).ready(function($) {
 
     $("#c").click(
         function () {
-            calculator.clear()
+            calculator.clear();
             display(calculator.getEquation());
         }
     );
 
     $("#pos").click(
-        function () {
-            $('#coordo').show();
+        function (event) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    display('Lat:' + position.coords.latitude.toFixed(4) +
+                        ' Lon: ' + position.coords.longitude.toFixed(4));
+                });
+            } else {
+                display('Geolocation non disponible');
+            }
         }
     );
 
     $("#factoriel").click(
         function () {
             calculator.factorial();
+            display(calculator.getEquation());
         }
     );
 
     $("#setMem").click(
-        function () {
-            calculator.setMemory();
+        function (event) {
+            calculator.setMemory(screen.text());
+            memoryNumber = screen.text();
         }
     );
 
     $("#sin").click(
         function () {
-          calculator.sin(calculator.getEquation());
+            var temp = calculator.getEquation();
+            calculator.clear();
+            calculator.sin(temp);
+            display(calculator.getEquation());
         }
     );
 
     $("#cos").click(
         function () {
-            var temp = calculator.getEquation()
+            var temp = calculator.getEquation();
             calculator.clear();
             calculator.cos(temp);
             display(calculator.getEquation());
@@ -153,22 +175,22 @@ $(document).ready(function($) {
 
     $("#tan").click(
         function () {
-            calculator.tan(calculator.getEquation());
+            var temp = calculator.getEquation();
+            calculator.clear();
+            calculator.tan(temp);
+            display(calculator.getEquation());
         }
     );
 
     $("#getMem").click(
-        function () {
-            calculator.getMemory()
+        function (event) {
+            calculator.value(calculator.getMemory());
+            screen.text(memoryNumber);
         }
     );
+    function display(value) {
+        $('.screen').text(value);
+    }
 
-    $('#coordo').text("Longitude : " + geoplugin_latitude() + " Latitude : " + geoplugin_longitude());
-    $('#coordo').hide();
-    $('#version').show('fast').text(jQuery.fn.jquery);
-    display("0")
 });
 
-function display(value) {
-    $('.screen').text(value);
-}
