@@ -5,7 +5,7 @@
 $(document).ready(function($) {
 
     var calculator = new Calculator();
-    
+
     var screen = $('.screen');
 
     var memoryNumber = 'no data was set';
